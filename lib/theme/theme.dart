@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../main.dart';
 
-
 class Themes {
   static ThemeData customDarkTheme = ThemeData.dark().copyWith();
   static ThemeData customLightTheme = ThemeData.light().copyWith();

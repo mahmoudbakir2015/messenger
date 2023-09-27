@@ -1,0 +1,35 @@
+abstract class AppImage {
+  static String about = 'assets/images/about.svg';
+  static String account = 'assets/images/account.svg';
+  static String bell = 'assets/images/bell.svg';
+  static String check_net = 'assets/images/check_net.svg';
+  static String client = 'assets/images/client.svg';
+  static String error = 'assets/images/error.svg';
+  static String fawry = 'assets/images/fawry.svg';
+  static String gift = 'assets/images/gift.svg';
+  static String gift_drawer = 'assets/images/gift_drawer.svg';
+  static String image = 'assets/images/image.svg';
+  static String language = 'assets/images/language.svg';
+  static String lock = 'assets/images/lock.svg';
+  static String log_out = 'assets/images/log_out.svg';
+  static String map = 'assets/images/map.svg';
+  static String master_card = 'assets/images/master_card.svg';
+  static String notification = 'assets/images/notification.svg';
+  static String vodafones = 'assets/images/vodafones.svg';
+  static String notify = 'assets/images/notify.svg';
+  static String pay_pal = 'assets/images/pay_pal.svg';
+  static String ride = 'assets/images/ride.svg';
+  static String right_fill = 'assets/images/right_fill.svg';
+  static String route_pass = 'assets/images/route_pass.svg';
+  static String setting = 'assets/images/setting.svg';
+  static String wallets = 'assets/images/wallets.svg';
+  static String car_travel = 'assets/images/car_travel.svg';
+  static String line = 'assets/images/line.svg';
+  static String car_ride = 'assets/images/car_ride.svg';
+  static String car_rent = 'assets/images/car_rent.svg';
+  static String locations = 'assets/images/locations.svg';
+  static String current_address = 'assets/images/current_address.svg';
+  static String dash_line = 'assets/images/dash_line.svg';
+  static String line_horizintal = 'assets/images/line_horizental.svg';
+  static String moneys = 'assets/images/moneys.svg';
+}

@@ -1,36 +1,27 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:messenger/view/chat_view.dart';
-import 'package:messenger/view/home_chats.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:messenger/business_logic/cubit/App_cubit.dart';
+import 'package:messenger/observer_block.dart';
+import 'package:messenger/presentation/App_Master/App_Master.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'middelware/authMiddelware.dart';
-import 'view/sub_datails_page.dart';
 
 late SharedPreferences sharedPref;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  Bloc.observer = MyBlocObserver();
   runApp(
-    GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: "/controlView",
-      getPages: [
-        GetPage(
-          name: "/home",
-          page: () => HomeChats(),
-        ),
-        GetPage(
-          name: "/chatView",
-          page: () => ChatView(),
-        ),
-        GetPage(
-          name: "/subDetail",
-          page: () => SubDetail(),
-        ),
-        GetPage(
-          name: "/controlView",
-          page: () => ControlViewMessenger(),
-        ),
-      ],
+    ScreenUtilInit(
+      builder: (_, child) {
+        return BlocProvider(
+          create: (context) => AppCubit(),
+          child: const MaterialApp(
+            home: AppMaster(),
+          ),
+        );
+      },
     ),
   );
 }
