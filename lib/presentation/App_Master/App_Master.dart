@@ -1,8 +1,8 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:messenger/business_logic/cubit/App_cubit.dart';
 import 'package:messenger/constant/constant.dart';
+import 'package:messenger/presentation/App_Master/item.dart';
 import 'package:messenger/presentation/App_Master/settings/change_pages.dart';
 import '../../business_logic/cubit/App_states.dart';
 import '../../custom_widget/custom_circle_avatar.dart';
@@ -21,103 +21,29 @@ class AppMaster extends StatelessWidget {
         ),
         drawer: drawer(context: context),
         bottomNavigationBar: bottomNavigationBar(context: context),
-        body: cubit.currentScreen,
-      );
-    });
-  }
-
-  Widget bottomNavigationBar({required BuildContext context}) {
-    AppCubit cubit = AppCubit.get(context);
-    return BlocBuilder<AppCubit, AppStates>(builder: (context, state) {
-      return CurvedNavigationBar(
-        index: cubit.navigatorValue,
-        items: const [
-          Icon(
-            Icons.chat,
-            size: 30,
-          ),
-          Icon(
-            Icons.call,
-            size: 30,
-          ),
-          Icon(
-            Icons.photo_album,
-            size: 30,
-          ),
-        ],
-        onTap: (index) {
-          cubit.changeSelectedValue(index);
-        },
+        body: Padding(
+          padding: EdgeInsets.all(PaddingApp.appPadding),
+          child: cubit.currentScreen,
+        ),
       );
     });
   }
 
   AppBar appBar(int controller) {
     if (controller == 0) {
-      return AppBar(
-        title: const Text("الدردشات"),
-        actions: [
-          InkWell(
-            child: const CircleAvatar(
-              child: Icon(
-                Icons.camera_alt,
-              ),
-            ),
-            onTap: () {},
-          ),
-          const SizedBox(
-            width: 15,
-          ),
-          InkWell(
-            child: const CircleAvatar(
-              child: Icon(
-                Icons.edit,
-              ),
-            ),
-            onTap: () {},
-          ),
-        ],
+      return buildCustomAppBar(
+        text: 'Chats',
+        iconData: Icons.chat,
       );
     } else if (controller == 1) {
-      return AppBar(
-        title: const Text("المكالمات"),
-        actions: [
-          InkWell(
-            child: const CircleAvatar(
-              child: Icon(
-                Icons.call,
-              ),
-            ),
-            onTap: () {},
-          ),
-          const SizedBox(
-            width: 15,
-          ),
-          InkWell(
-            child: const CircleAvatar(
-              child: Icon(
-                Icons.video_call,
-              ),
-            ),
-            onTap: () {},
-          ),
-        ],
+      return buildCustomAppBar(
+        text: 'Calls',
+        iconData: Icons.call,
       );
     } else {
-      return AppBar(
-        title: const Text(
-          "Stories",
-        ),
-        actions: [
-          InkWell(
-            child: const CircleAvatar(
-              child: Icon(
-                Icons.people_alt_outlined,
-              ),
-            ),
-            onTap: () {},
-          ),
-        ],
+      return buildCustomAppBar(
+        text: 'Stories',
+        iconData: Icons.people_alt_outlined,
       );
     }
   }

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:messenger/presentation/App_Master/home/chat/item.dart';
-
-import '../../../../business_logic/cubit/App_cubit.dart';
-import '../../../../business_logic/cubit/App_states.dart';
+import 'package:messenger/presentation/App_Master/home/main_screen/chat/item.dart';
+import '../../../../../business_logic/cubit/App_cubit.dart';
+import '../../../../../business_logic/cubit/App_states.dart';
 
 class ChatView extends StatefulWidget {
   final String receiverId;

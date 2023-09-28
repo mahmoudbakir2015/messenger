@@ -7,7 +7,7 @@ import 'package:intl/intl.dart';
 import 'package:messenger/business_logic/cubit/App_states.dart';
 import '../../data/model/message_model.dart';
 import '../../presentation/App_Master/calls/calls_page.dart';
-import '../../presentation/App_Master/home/home_chats.dart';
+import '../../presentation/App_Master/home/main_screen/home_chats.dart';
 import '../../presentation/App_Master/settings/story_page.dart';
 
 class AppCubit extends Cubit<AppStates> {
@@ -17,10 +17,7 @@ class AppCubit extends Cubit<AppStates> {
         );
   static AppCubit get(context) => BlocProvider.of(context);
 
-  int count = 0;
-  int count_1 = 0;
-  int count_2 = 0;
-  Widget currentScreen = HomeChats();
+  Widget currentScreen = const HomeChats();
   int navigatorValue = 0;
   String senderId = '5678';
   void sendMessage({
@@ -100,53 +97,22 @@ class AppCubit extends Cubit<AppStates> {
     });
   }
 
-  void increment() {
-    count++;
-    emit(ChangeState());
-  }
-
-  void decrement() {
-    count--;
-    emit(ChangeState());
-  }
-
-  void increment_1() {
-    count_1++;
-    emit(ChangeState());
-  }
-
-  void increment_2() {
-    count_2++;
-    emit(ChangeState());
-  }
-
-  void decrement_1() {
-    count_1--;
-    emit(ChangeState());
-  }
-
-  void decrement_2() {
-    count_2--;
-    emit(ChangeState());
-  }
-
-  int sum() => count_1 + count_2;
   void changeSelectedValue(int selectedValue) {
     navigatorValue = selectedValue;
     switch (selectedValue) {
       case 0:
         {
-          currentScreen = HomeChats();
+          currentScreen = const HomeChats();
           break;
         }
       case 1:
         {
-          currentScreen = CallsPage();
+          currentScreen = const CallsPage();
           break;
         }
       case 2:
         {
-          currentScreen = Stories();
+          currentScreen = const Stories();
           break;
         }
     }

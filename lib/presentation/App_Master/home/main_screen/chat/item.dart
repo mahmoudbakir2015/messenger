@@ -1,7 +1,7 @@
 import 'package:flutter/Material.dart';
-import '../../../../business_logic/cubit/App_cubit.dart';
-import '../../../../constant/constant.dart';
-import '../../../../data/model/message_model.dart';
+import '../../../../../business_logic/cubit/App_cubit.dart';
+import '../../../../../constant/constant.dart';
+import '../../../../../data/model/message_model.dart';
 
 buildAppBar({
   required BuildContext context,
@@ -26,7 +26,7 @@ buildAppBar({
           backgroundImage: NetworkImage(image),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 8),
+          padding: const EdgeInsets.only(left: 8),
           child: Text(
             name,
             style: const TextStyle(color: Colors.black),
@@ -44,7 +44,7 @@ buildRecievedMessage(MessageModel messageModel, {required String img}) {
         radius: 15,
         backgroundImage: NetworkImage(driverImage),
       ),
-      SizedBox(
+      const SizedBox(
         width: 10,
       ),
       Expanded(
@@ -55,7 +55,7 @@ buildRecievedMessage(MessageModel messageModel, {required String img}) {
             Align(
               alignment: Alignment.centerLeft,
               child: Container(
-                padding: EdgeInsets.all(7),
+                padding: const EdgeInsets.all(7),
                 decoration: BoxDecoration(
                   color: Colors.grey[300],
                   borderRadius: BorderRadiusDirectional.only(
@@ -94,7 +94,7 @@ buildSenderMessage(MessageModel messageModel) {
       Align(
         alignment: Alignment.centerRight,
         child: Container(
-          padding: EdgeInsets.all(7),
+          padding: const EdgeInsets.all(7),
           decoration: BoxDecoration(
             color: Colors.indigo[300],
             borderRadius: BorderRadiusDirectional.only(
@@ -142,14 +142,14 @@ buildFooter({
         Expanded(
           child: TextFormField(
             controller: controller,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               contentPadding: EdgeInsets.all(10),
-              border: const OutlineInputBorder(),
+              border: OutlineInputBorder(),
               hintText: "Write Your message",
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         InkWell(
@@ -171,7 +171,7 @@ buildFooter({
               color: ColorApp.primaryColor,
               borderRadius: BorderRadius.circular(Margin.borderRadius),
             ),
-            child: Icon(
+            child: const Icon(
               Icons.send,
               size: 20,
               color: Colors.white,

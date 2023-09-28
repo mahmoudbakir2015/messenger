@@ -18,6 +18,7 @@ void main() async {
         return BlocProvider(
           create: (context) => AppCubit(),
           child: const MaterialApp(
+            debugShowCheckedModeBanner: false,
             home: AppMaster(),
           ),
         );
