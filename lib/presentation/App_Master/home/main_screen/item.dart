@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:messenger/constant/constant.dart';
+import '../../../../business_logic/cubit/app_cubit/App_cubit.dart';
 import '../../../../custom_widget/custom_circle_avatar.dart';
 import 'chat/chat.dart';
 
-buildSearchBar() {
+buildSearchBar({void Function()? onTap, required AppCubit cubit}) {
   return Padding(
     padding: EdgeInsets.all(PaddingApp.appPadding),
     child: Container(
@@ -13,6 +14,9 @@ buildSearchBar() {
       ),
       width: double.infinity,
       child: TextFormField(
+        onTap: () {
+          cubit.changeStateSearch();
+        },
         decoration: const InputDecoration(
           prefixIcon: Icon(Icons.search),
           hintText: "search",

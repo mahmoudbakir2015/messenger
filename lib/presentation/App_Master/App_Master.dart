@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:messenger/business_logic/cubit/App_cubit.dart';
+import 'package:messenger/business_logic/cubit/app_cubit/App_cubit.dart';
 import 'package:messenger/constant/constant.dart';
 import 'package:messenger/presentation/App_Master/item.dart';
 import 'package:messenger/presentation/App_Master/settings/change_pages.dart';
-import '../../business_logic/cubit/App_states.dart';
+import '../../business_logic/cubit/app_cubit/App_states.dart';
 import '../../custom_widget/custom_circle_avatar.dart';
 import '../../custom_widget/custom_list_drawer.dart';
 

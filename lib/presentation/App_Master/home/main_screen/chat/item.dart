@@ -1,5 +1,5 @@
 import 'package:flutter/Material.dart';
-import '../../../../../business_logic/cubit/App_cubit.dart';
+import '../../../../../business_logic/cubit/app_cubit/App_cubit.dart';
 import '../../../../../constant/constant.dart';
 import '../../../../../data/model/message_model.dart';
 

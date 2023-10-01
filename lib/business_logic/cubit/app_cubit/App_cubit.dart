@@ -4,11 +4,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:messenger/business_logic/cubit/App_states.dart';
-import '../../data/model/message_model.dart';
-import '../../presentation/App_Master/calls/calls_page.dart';
-import '../../presentation/App_Master/home/main_screen/home_chats.dart';
-import '../../presentation/App_Master/settings/story_page.dart';
+import 'package:messenger/business_logic/cubit/app_cubit/App_states.dart';
+import '../../../data/model/message_model.dart';
+import '../../../presentation/App_Master/calls/calls_page.dart';
+import '../../../presentation/App_Master/home/main_screen/home_chats.dart';
+import '../../../presentation/App_Master/settings/story_page.dart';
 
 class AppCubit extends Cubit<AppStates> {
   AppCubit()
@@ -19,6 +19,10 @@ class AppCubit extends Cubit<AppStates> {
 
   Widget currentScreen = const HomeChats();
   int navigatorValue = 0;
+  void changeStateSearch() {
+    emit(ChangeStateSearch());
+  }
+
   String senderId = '5678';
   void sendMessage({
     required String recieverId,
@@ -77,7 +81,7 @@ class AppCubit extends Cubit<AppStates> {
         .snapshots()
         .listen((querySnapshot) {
       list = [];
-      print("querySnapshot.docs.length ${querySnapshot}");
+      print("querySnapshot.docs.length $querySnapshot");
       var parsedData = json.decode(jsonEncode(querySnapshot.data()));
       print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA $parsedData");
       var messages = parsedData['messages'];

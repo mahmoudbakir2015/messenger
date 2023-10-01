@@ -3,11 +3,14 @@ import 'package:flutter/Material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../business_logic/cubit/App_cubit.dart';
-import '../../business_logic/cubit/App_states.dart';
+import '../../business_logic/cubit/app_cubit/App_cubit.dart';
+import '../../business_logic/cubit/app_cubit/App_states.dart';
 
-buildCustomAppBar(
-    {required String text, IconData? iconData, void Function()? iconTap}) {
+buildCustomAppBar({
+  required String text,
+  IconData? iconData,
+  void Function()? iconTap,
+}) {
   return AppBar(
     titleTextStyle: const TextStyle(
       fontSize: 23,
